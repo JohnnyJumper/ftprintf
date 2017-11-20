@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 19:23:00 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/13 21:22:05 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/20 13:51:29 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_get_char(t_arg *args, va_list *ap)
 	if (args->sp == '%')
 		args->val.c = '%';
 	else
-		args->val.c = (char)va_arg(*ap, int);
+		args->val.c = (unsigned char)va_arg(*ap, int);
 	args->l = 1;
 	width = get_width(args);
 	if (args->flag.left_align)

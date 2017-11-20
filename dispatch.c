@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 20:13:59 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/14 22:00:05 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/20 13:51:49 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void		init_funcs(func *funcs)
 	funcs['O'] = &ft_get_octal;
 	funcs['%'] = &ft_get_char;
 	funcs['c'] = &ft_get_char;
-	funcs['C'] = &ft_get_wchar;
+	funcs['C'] = &ft_get_char;
 	funcs['p'] = &ft_get_addr;
 	funcs['b'] = &ft_get_mybinary;
 	funcs['U'] = &ft_get_unumber2;
