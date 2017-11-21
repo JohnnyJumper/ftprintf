@@ -6,13 +6,13 @@
 #    By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 18:19:55 by jtahirov          #+#    #+#              #
-#    Updated: 2017/11/20 11:43:28 by jtahirov         ###   ########.fr        #
+#    Updated: 2017/11/20 16:54:56 by jtahirov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c
+CFLAGS = -Wall -Wextra -Werror -c 
 AR = ar
 ARFLAGS = rc
 HFILE = .

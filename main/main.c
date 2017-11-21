@@ -215,7 +215,10 @@ int	main(void)
 	/* printf("p |% 5p|\n", 0); */
 	/* ft_printf("|%#o|\n", 0); */
 	/* printf("|%#o|\n", 0); */
-	ft_printf("|%lo|\n", 2147483648);
-	printf("|%lo|\n", 2147483648);
+	/* ft_printf("|%lo|\n", 2147483648); */
+	/* printf("|%lo|\n", 2147483648); */
+	 ft_printf("|%S|\n", L"@@"); 
+	 printf("|%S|\n", L"@@");
+
 	return (0);
 }

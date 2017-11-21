@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 15:57:50 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/14 21:00:41 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/20 16:51:55 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <wchar.h>
 # define ATOI_CONDITION *str == ' ' || *str == '\t' || ATOI_CONDITION2
 # define ATOI_CONDITION2 *str == '\n' || *str == '\v' || ATOI_CONDITION3
 # define ATOI_CONDITION3 *str == '\f' || *str == '\r'
@@ -43,6 +44,7 @@ void			ft_putstr(const char *str);
 void			ft_putnbr(int num);
 size_t			ft_strlen(const char *str);
 size_t			ft_strnlen(const char *str, size_t n);
+int				ft_wcharlen(wchar_t wc);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			ft_bzero_bwd(void *s, size_t n);

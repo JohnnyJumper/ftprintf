@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 20:13:59 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/20 13:51:49 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/20 16:53:30 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		init_funcs(func *funcs)
 	funcs['x'] = &ft_get_hex;
 	funcs['X'] = &ft_hex_wrapper;
 	funcs['s'] = &ft_get_str;
-	funcs['S'] = &ft_get_str;
+	funcs['S'] = &ft_get_wstr;
 	funcs['i'] = &ft_get_number2;
 	funcs['d'] = &ft_get_number2;
 	funcs['D'] = &ft_get_number2;

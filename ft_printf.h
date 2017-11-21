@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:46:58 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/14 22:00:15 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/20 16:54:23 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ char				*ft_get_number2(t_arg *args, va_list *ap);
 char				*ft_get_unumber2(t_arg *args, va_list *ap);
 char				*ft_get_mybinary(t_arg *args, va_list *ap);
 char				*ft_get_wchar(t_arg *args, va_list *ap);
+char				*ft_get_wstr(t_arg *args, va_list *ap);
 /* ------------- */
 
 /* Dispatch table */
