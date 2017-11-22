@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 18:01:18 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/13 21:23:56 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:11:26 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ static char		*get_width(t_arg *args)
 	ft_memset(str, ' ', num);
 	return (str);
 }
-
 
 static char		*get_precision(t_arg *args)
 {

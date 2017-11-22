@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 20:36:16 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/13 22:56:44 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:20:23 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char		*get_width(t_arg *args, int val)
 
 	if (args->width < val)
 		width = ft_strdup("");
-	else 
+	else
 	{
 		width = ft_strnew(args->width - val);
 		if (args->flag.zero && args->precision == 0 && !args->flag.left_align)
@@ -44,8 +44,7 @@ static char		*get_precision(t_arg *args)
 	return (precision);
 }
 
-
-char	*ft_get_unumber2(t_arg *args, va_list *ap)
+char			*ft_get_unumber2(t_arg *args, va_list *ap)
 {
 	char	*precision;
 	char	*width;
@@ -57,10 +56,12 @@ char	*ft_get_unumber2(t_arg *args, va_list *ap)
 	args->l = ft_strlen(value);
 	precision = get_precision(args);
 	args->l = (args->precision == -1 || args->precision == -2) ? 0 : args->l;
-	width = get_width(args, ft_strlen(precision) + args->l + ((args->sign != '\0') ? 1 : 0));
+	width = get_width(args, ft_strlen(precision) + args->l +
+			((args->sign != '\0') ? 1 : 0));
 	if (args->flag.left_align)
 		res = ft_strmjoin(3, precision, value, width);
-	else if ((args->precision == -2 || args->precision == -1) && args->val.uint == 0)
+	else if ((args->precision == -2 || args->precision == -1)
+			&& args->val.uint == 0)
 		res = ft_strmjoin(2, width, precision);
 	else
 		res = ft_strmjoin(3, width, precision, value);

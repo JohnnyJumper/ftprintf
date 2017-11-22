@@ -6,13 +6,13 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/12 20:13:59 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/20 16:53:30 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:52:15 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void		init_funcs(func *funcs)
+static void		init_funcs(t_func *funcs)
 {
 	funcs['x'] = &ft_get_hex;
 	funcs['X'] = &ft_hex_wrapper;
@@ -25,16 +25,16 @@ static void		init_funcs(func *funcs)
 	funcs['O'] = &ft_get_octal;
 	funcs['%'] = &ft_get_char;
 	funcs['c'] = &ft_get_char;
-	funcs['C'] = &ft_get_char;
+	funcs['C'] = &ft_get_wchar;
 	funcs['p'] = &ft_get_addr;
 	funcs['b'] = &ft_get_mybinary;
 	funcs['U'] = &ft_get_unumber2;
 	funcs['u'] = &ft_get_unumber2;
 }
 
-func			get_func(char c)
+t_func			get_func(char c)
 {
-	static	func	*funcs;
+	static	t_func	*funcs;
 
 	if (!funcs)
 	{

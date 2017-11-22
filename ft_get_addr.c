@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 21:12:56 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/18 14:31:01 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 19:55:29 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static char		*get_prefix_posfix(t_arg *args)
 	return (res);
 }
 
-char	*ft_get_addr(t_arg *args, va_list *ap)
+char			*ft_get_addr(t_arg *args, va_list *ap)
 {
 	char	*value;
 	char	*prefix_postfix;
@@ -38,7 +38,7 @@ char	*ft_get_addr(t_arg *args, va_list *ap)
 	args->l = ft_strlen(value);
 	prefix_postfix = get_prefix_posfix(args);
 	if (args->flag.left_align || *prefix_postfix == '0')
-		res = ft_strmjoin(2,value, prefix_postfix);
+		res = ft_strmjoin(2, value, prefix_postfix);
 	else
 		res = ft_strmjoin(2, prefix_postfix, value);
 	args->l = ft_strlen(res);

@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:44:15 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/20 16:53:11 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:51:51 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ int		parse_exec(char **format, va_list *ap)
 int		ft_logic(va_list *ap, t_arg *args)
 {
 	char	*value;
-	func	f;
+	t_func	f;
 
 	f = get_func(args->sp);
 	value = f(args, ap);
 	write(1, value, args->l);
 	ft_memdel((void **)&value);
-	ft_argdelete(args);	
+	ft_argdelete(args);
 	return (args->l);
 }

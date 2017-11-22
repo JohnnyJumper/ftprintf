@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 18:29:49 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/18 16:06:11 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:09:46 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,15 @@ static char		*get_spaces(t_arg *args, int zeros)
 	spaces = 0;
 	if (args->flag.left_align)
 		spaces = args->width - (zeros + args->l);
-	else
-		if (!args->flag.zero)
-			spaces = args->width - (zeros + args->l);
+	else if (!args->flag.zero)
+		spaces = args->width - (zeros + args->l);
 	spaces = (spaces < 0) ? 0 : spaces;
 	sp = ft_strnew(spaces);
 	ft_memset(sp, ' ', spaces);
 	return (sp);
 }
 
-char	*ft_get_octal(t_arg *args, va_list *ap)
+char			*ft_get_octal(t_arg *args, va_list *ap)
 {
 	char	*value;
 	char	*z;
@@ -56,17 +55,19 @@ char	*ft_get_octal(t_arg *args, va_list *ap)
 
 	conversion_uint(args, ap);
 	value = ft_dectooctal(args->val.uint);
-	args->l = (args->precision == -1 || args->precision == -2) ? 0 : ft_strlen(value);
+	args->l = (args->precision == -1 || args->precision == -2)
+		? 0 : ft_strlen(value);
 	z = get_zeros(args);
 	sp = get_spaces(args, ft_strlen(z));
 	if (args->flag.left_align)
 		res = ft_strmjoin(3, z, value, sp);
-	else if ((args->precision == -1 || args->precision == -2) && args->val.uint == 0)
+	else if ((args->precision == -1 || args->precision == -2)
+			&& args->val.uint == 0)
 		res = ft_strmjoin(2, sp, z);
 	else
 		res = ft_strmjoin(3, sp, z, value);
 	ft_memdel((void **)&z);
 	ft_memdel((void **)&sp);
-	args->l = ft_strlen(res); 
+	args->l = ft_strlen(res);
 	return (res);
 }

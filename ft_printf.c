@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:54:08 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/09 19:11:27 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:18:01 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ int		ft_printf(char *format, ...)
 
 	va_start(ap, format);
 	res = 0;
-
 	while ((perc = ft_strchr(format, '%')))
 	{
-		res += write(1, format, perc-format);
+		res += write(1, format, perc - format);
 		format = perc + 1;
 		if (*format)
 			res += parse_exec(&format, &ap);
@@ -31,5 +30,5 @@ int		ft_printf(char *format, ...)
 	if (*format)
 		res += write(1, format, ft_strlen(format));
 	va_end(ap);
-	return(res);
+	return (res);
 }

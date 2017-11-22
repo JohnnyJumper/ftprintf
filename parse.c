@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:03:42 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/14 21:09:46 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 19:34:07 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	parse_specifier(char **format, t_arg *args)
 	tmp = NULL;
 	if (args->sp == 'p')
 		args->flag.alt_mode = true;
-	if ((args->sp == 'U' || args->sp == 'O' || args->sp == 'D') && !(ft_strchr(args->length, 'l')))
+	if ((args->sp == 'U' || args->sp == 'O' ||
+			args->sp == 'D') && !(ft_strchr(args->length, 'l')))
 		add_length_l(args);
 	(*format)++;
 }

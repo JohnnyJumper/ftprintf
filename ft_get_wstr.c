@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 14:27:57 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/20 16:49:22 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:22:19 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static void		triple_b(wchar_t str, char **res)
 static void		quadruple_b(wchar_t str, char **res)
 {
 	**res = 0xF0 | (str >> 18);
-
 	(*res)++;
 	**res = 0x80 | ((str >> 12) & 0x3F);
 	(*res)++;
@@ -45,9 +44,9 @@ static void		quadruple_b(wchar_t str, char **res)
 
 static int		wstrlen(wchar_t *str)
 {
-	int			num;
+	int		num;
 
-	num  = 0;
+	num = 0;
 	while (*str)
 	{
 		num += ft_wcharlen(*str);
@@ -56,7 +55,7 @@ static int		wstrlen(wchar_t *str)
 	return (num);
 }
 
-char	*ft_get_wstr(t_arg *args, va_list *ap)
+char			*ft_get_wstr(t_arg *args, va_list *ap)
 {
 	wchar_t		*str;
 	char		*res;
@@ -79,5 +78,5 @@ char	*ft_get_wstr(t_arg *args, va_list *ap)
 			quadruple_b(*str, &res);
 		str++;
 	}
-	return(res - (args->l));
+	return (res - (args->l));
 }

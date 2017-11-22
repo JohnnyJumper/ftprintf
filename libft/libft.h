@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 15:57:50 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/20 16:51:55 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 19:52:44 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,6 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			*ft_bubblesort(int *array, size_t array_size);
 void			ft_print_array_int(int *array, size_t array_size);
 void			ft_lstpush(t_list **list, t_list *new);
-void			*ft_push(void *array, size_t array_size, const void *data, size_t data_size);
 char			*ft_strnjoin(char const *s1, char const *s2, int size);
 char			*ft_dectohex(unsigned long long int num);
 char			*ft_dectooctal(unsigned long long int num);

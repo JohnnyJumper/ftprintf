@@ -6,32 +6,32 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 20:36:16 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/13 22:46:24 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:17:16 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	get_sign(t_arg *args)
+static	void		get_sign(t_arg *args)
 {
 	if (args->val.sint < 0)
 	{
 		args->sign = '-';
 		args->val.sint *= -1;
 	}
-	else if(args->flag.force_sign)
+	else if (args->flag.force_sign)
 		args->sign = '+';
 	else if (args->flag.space)
 		args->sign = ' ';
 }
 
-static char		*get_width(t_arg *args, int val)
+static char			*get_width(t_arg *args, int val)
 {
 	char	*width;
 
 	if (args->width < val)
 		width = ft_strdup("");
-	else 
+	else
 	{
 		width = ft_strnew(args->width - val);
 		if ((args->flag.zero && args->precision == 0) && !args->flag.left_align)
@@ -42,7 +42,7 @@ static char		*get_width(t_arg *args, int val)
 	return (width);
 }
 
-static char		*get_precision(t_arg *args)
+static char			*get_precision(t_arg *args)
 {
 	char	*precision;
 	int		pre_cpy;
@@ -59,8 +59,14 @@ static char		*get_precision(t_arg *args)
 	return (precision);
 }
 
+static void			ft_delextra(char **precision, char **width, char **value)
+{
+	ft_memdel((void **)precision);
+	ft_memdel((void **)width);
+	ft_memdel((void **)value);
+}
 
-char	*ft_get_number2(t_arg *args, va_list *ap)
+char				*ft_get_number2(t_arg *args, va_list *ap)
 {
 	char	*precision;
 	char	*width;
@@ -73,18 +79,18 @@ char	*ft_get_number2(t_arg *args, va_list *ap)
 	args->l = ft_strlen(value);
 	precision = get_precision(args);
 	args->l = (args->precision == -1 || args->precision == -2) ? 0 : args->l;
-	width = get_width(args, ft_strlen(precision) + args->l + ((args->sign != '\0') ? 1 : 0));
+	width = get_width(args, ft_strlen(precision) + args->l +
+			((args->sign != '\0') ? 1 : 0));
 	if (args->flag.left_align)
-		res = ft_strmjoin(4,&args->sign, precision, value, width);
-	else if ((args->precision == -2 || args->precision == -1) && args->val.sint == 0)
+		res = ft_strmjoin(4, &args->sign, precision, value, width);
+	else if ((args->precision == -2 || args->precision == -1)
+			&& args->val.sint == 0)
 		res = ft_strmjoin(2, width, precision);
 	else if (*width == ' ')
 		res = ft_strmjoin(4, width, &args->sign, precision, value);
 	else
 		res = ft_strmjoin(4, &args->sign, width, precision, value);
 	args->l = ft_strlen(res);
-	ft_memdel((void **)&precision);
-	ft_memdel((void **)&width);
-	ft_memdel((void **)&value);
+	ft_delextra(&precision, &width, &value);
 	return (res);
 }

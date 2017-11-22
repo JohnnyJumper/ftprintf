@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 19:23:00 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/20 13:51:29 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 19:56:34 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char		*get_width(t_arg *args)
 	return (width);
 }
 
-char	*ft_get_char(t_arg *args, va_list *ap)
+char			*ft_get_char(t_arg *args, va_list *ap)
 {
 	char *res;
 	char *width;

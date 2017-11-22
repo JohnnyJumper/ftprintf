@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 19:41:44 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/18 11:52:26 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 19:57:30 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static char		*get_prefix(t_arg *args)
 	return (prefix);
 }
 
-char	*ft_get_hex(t_arg *args, va_list *ap)
+char			*ft_get_hex(t_arg *args, va_list *ap)
 {
 	char	*myhex;
 	char	*prefix;
@@ -60,11 +60,11 @@ char	*ft_get_hex(t_arg *args, va_list *ap)
 	else
 		args->l = ft_strlen(ft_dectohex(args->val.uint));
 	prefix = get_prefix(args);
-
 	sp = get_spaces(args, prefix);
 	if (args->flag.left_align)
 		myhex = ft_strmjoin(3, prefix, ft_dectohex(args->val.uint), sp);
-	else if ((args->precision == -1 || args->precision == -2) && args->val.uint == 0)
+	else if ((args->precision == -1 || args->precision == -2)
+			&& args->val.uint == 0)
 		myhex = ft_strmjoin(2, sp, prefix);
 	else if (sp[0] == ' ')
 		myhex = ft_strmjoin(3, sp, prefix, ft_dectohex(args->val.uint));
@@ -76,7 +76,7 @@ char	*ft_get_hex(t_arg *args, va_list *ap)
 	return (myhex);
 }
 
-char	*ft_hex_wrapper(t_arg *args, va_list *ap)
+char			*ft_hex_wrapper(t_arg *args, va_list *ap)
 {
 	return (ft_strupper(ft_get_hex(args, ap)));
 }

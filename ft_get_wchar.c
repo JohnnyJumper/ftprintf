@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 21:12:24 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/14 22:23:16 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 20:18:46 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ static char		*quadruple_b(wint_t wide_char, t_arg *args)
 	args->l += 4;
 	return (str);
 }
-char	*ft_get_wchar(t_arg *args, va_list *ap)
+
+char			*ft_get_wchar(t_arg *args, va_list *ap)
 {
 	wint_t		wide_char;
 	char		*str;

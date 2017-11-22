@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 15:56:07 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/10 17:24:46 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/20 12:09:48 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 void	ft_putstr(const char *str)
 {
 	int x;
-
-	x = -1;
+	
+	x = 0;
 	if (!str)
 		return;
-	while (str[++x])
+	while (str[x++])
 		;
 	write(1, str, x);
 }

@@ -6,13 +6,13 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 18:18:10 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/09 23:41:07 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/21 19:56:14 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	conversion_sint (t_arg *args, va_list *ap)
+void	conversion_sint(t_arg *args, va_list *ap)
 {
 	if (args->length[0] == '\0')
 		args->val.sint = va_arg(*ap, int);
@@ -30,7 +30,7 @@ void	conversion_sint (t_arg *args, va_list *ap)
 		args->val.sint = va_arg(*ap, size_t);
 }
 
-void	conversion_uint (t_arg *args, va_list *ap)
+void	conversion_uint(t_arg *args, va_list *ap)
 {
 	if (args->sp == 'U')
 		args->val.uint = va_arg(*ap, unsigned long int);
@@ -39,7 +39,7 @@ void	conversion_uint (t_arg *args, va_list *ap)
 	else if (args->length[0] == 'h' && args->length[1] == 'h')
 		args->val.uint = (unsigned char)va_arg(*ap, unsigned int);
 	else if (args->length[0] == 'h')
-		args->val.uint =  (unsigned short)va_arg(*ap, unsigned int);
+		args->val.uint = (unsigned short)va_arg(*ap, unsigned int);
 	else if (args->length[0] == 'l' && args->length[1] == 'l')
 		args->val.uint = va_arg(*ap, unsigned long long int);
 	else if (args->length[0] == 'l')
