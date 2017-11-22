@@ -6,7 +6,7 @@
 #    By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 18:19:55 by jtahirov          #+#    #+#              #
-#    Updated: 2017/11/21 21:07:57 by jtahirov         ###   ########.fr        #
+#    Updated: 2017/11/21 21:15:35 by jtahirov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,5 @@ clean: libftclean
 
 fclean: clean libftfclean
 	@/bin/rm -f $(NAME)
-	@/bin/rm -f $(OUTPUT)
 
 re: fclean all
