@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/01 18:24:26 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/14 21:00:20 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/24 20:59:06 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_dectooctal(unsigned long long int num)
 {
-	char	arr[20];
+	char	arr[32];
 	char	*asw;
 	int		counter;
 
-	ft_bzero(arr, 20);
-	asw = ft_strnew(20);
+	ft_bzero(arr, 32);
+	asw = ft_strnew(32);
 	counter = 0;
 	if (num == 0)
 		arr[counter++] = '0';

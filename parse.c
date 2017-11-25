@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 15:03:42 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/21 19:34:07 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/24 20:48:38 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	parse_width(char **format, t_arg *args, va_list *ap)
 	else
 		args->width = ft_atoi(*format);
 	(*format) = (last_width == *format) ? *format : last_width;
+	if (**format == '*')
+		(*format)++;
 }
 
 void	parse_precision(char **format, t_arg *args, va_list *ap)
@@ -75,6 +77,7 @@ void	parse_precision(char **format, t_arg *args, va_list *ap)
 	{
 		args->precision = va_arg(*ap, int);
 		last_precision++;
+		args->precision = (args->precision == 0) ? -2 : args->precision;
 	}
 	else
 		args->precision = ft_atoi(*format);

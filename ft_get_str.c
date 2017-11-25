@@ -6,19 +6,21 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 18:01:18 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/21 20:11:26 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/24 21:04:23 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char		*get_width(t_arg *args)
+char		*get_width_str(t_arg *args)
 {
 	int		num;
 	char	*str;
 
 	if (args->precision > 0 && args->precision < args->l)
 		num = args->width - args->precision;
+	else if (args->precision == -1)
+		num = args->width;
 	else
 		num = args->width - args->l;
 	num = (num < 0) ? 0 : num;
@@ -27,12 +29,14 @@ static char		*get_width(t_arg *args)
 	return (str);
 }
 
-static char		*get_precision(t_arg *args)
+char		*get_precision_str(t_arg *args)
 {
 	char	*str;
 
 	if (args->precision > 0 && args->precision < args->l)
 		str = ft_strsub(args->val.str, 0, args->precision);
+	else if (args->precision == -1)
+		str = ft_strdup("");
 	else
 		str = ft_strsub(args->val.str, 0, args->l);
 	return (str);
@@ -48,8 +52,8 @@ char			*ft_get_str(t_arg *args, va_list *ap)
 	if (!(args->val.str))
 		args->val.str = "(null)";
 	args->l = ft_strlen(args->val.str);
-	value_to_print = get_precision(args);
-	prefix_postfix = get_width(args);
+	value_to_print = get_precision_str(args);
+	prefix_postfix = get_width_str(args);
 	if (args->flag.left_align)
 		res = ft_strjoin(value_to_print, prefix_postfix);
 	else

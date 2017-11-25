@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:46:58 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/21 21:08:39 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/24 20:27:33 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,9 @@ void				add_length_l(t_arg *args);
 char				*ft_get_prefix(t_arg *args);
 void				free_num(char **n, char **z, char **s, char **w);
 t_flags				*get_flags(t_arg *args);
+char				*ft_wstr_helper(char *res, t_arg *args);
+char				*get_precision_str(t_arg *args);
+char				*get_width_str(t_arg *args);
 
 /*
 ** Conversion and typecasting if needed

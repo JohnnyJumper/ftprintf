@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 18:29:49 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/21 20:09:46 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/24 19:25:31 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char			*ft_get_octal(t_arg *args, va_list *ap)
 	if (args->flag.left_align)
 		res = ft_strmjoin(3, z, value, sp);
 	else if ((args->precision == -1 || args->precision == -2)
-			&& args->val.uint == 0)
+			&& args->val.uint == 0 && !args->flag.alt_mode)
 		res = ft_strmjoin(2, sp, z);
 	else
 		res = ft_strmjoin(3, sp, z, value);

@@ -6,7 +6,7 @@
 /*   By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/20 14:27:57 by jtahirov          #+#    #+#             */
-/*   Updated: 2017/11/21 20:22:19 by jtahirov         ###   ########.fr       */
+/*   Updated: 2017/11/24 20:19:48 by jtahirov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ char			*ft_get_wstr(t_arg *args, va_list *ap)
 	str = va_arg(*ap, wchar_t *);
 	res = NULL;
 	if (!str)
+	{
+		args->l = 6;
 		return (ft_strdup("(null)"));
+	}
 	args->l = wstrlen(str);
 	res = ft_strnew(args->l);
 	while (*str)
@@ -78,5 +81,6 @@ char			*ft_get_wstr(t_arg *args, va_list *ap)
 			quadruple_b(*str, &res);
 		str++;
 	}
-	return (res - (args->l));
+	res = ft_wstr_helper(res - (args->l), args);
+	return (res);
 }

@@ -6,12 +6,12 @@
 #    By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/11 13:01:35 by jtahirov          #+#    #+#              #
-#    Updated: 2017/11/21 19:53:04 by jtahirov         ###   ########.fr        #
+#    Updated: 2017/11/24 20:57:17 by jtahirov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-GCCW = gcc -Wall -Wextra -Werror
+GCCW = gcc -Wall -Wextra -Werror -g
 SRC = ft_isascii.c ft_memcmp.c ft_strchr.c ft_strlen.c ft_strrchr.c 		\
 	  ft_atoi.c ft_isdigit.c ft_memcpy.c ft_strcmp.c ft_strncat.c 		\
 	  ft_strstr.c ft_bzero.c ft_isprint.c ft_memmove.c ft_strcpy.c 		\

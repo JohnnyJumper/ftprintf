@@ -6,13 +6,13 @@
 #    By: jtahirov <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/10/23 18:19:55 by jtahirov          #+#    #+#              #
-#    Updated: 2017/11/21 21:15:35 by jtahirov         ###   ########.fr        #
+#    Updated: 2017/11/24 19:18:09 by jtahirov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -c
+CFLAGS = -Wall -Wextra -Werror -c -g
 AR = ar
 ARFLAGS = rc
 HFILE = .
@@ -46,5 +46,7 @@ clean: libftclean
 
 fclean: clean libftfclean
 	@/bin/rm -f $(NAME)
+
+.PHONY: clean fclean 
 
 re: fclean all
